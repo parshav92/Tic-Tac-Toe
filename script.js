@@ -20,19 +20,24 @@ boxes.forEach((box) => {
       box.textContent = currentPlayer;
       console.log(checkWin(currentPlayer));
       if (checkWin(currentPlayer)) {
-        document.getElementsByClassName(
-          "winnertext"
-        ).textContent = `Player ${currentPlayer} wins!`;
-
-        document.getElementsByClassName("winner")[0].style.display = "flex";
-        backgroundMusic.src = "win-music.mp3"; // Change the source to your win music
+        const winnerText = document.querySelector(".winnertext");
+        winnerText.textContent = `Player ${currentPlayer === "X" ? 1 : 2} wins!`;
+        winnerDiv.style.display = "flex";
+        backgroundMusic.src = "win-music.mp3"; 
         backgroundMusic.play();
-        // console.log(`${currentPlayer} wins`);
+      } else if (Array.from(boxes).every((box) => box.textContent !== "")) {
+        // Check for Tie
+        const winnerText = document.querySelector(".winnertext");
+        winnerText.textContent = "Tie!";
+        winnerDiv.style.display = "flex";
+        backgroundMusic.src = "tie-music.mp3"; 
+        backgroundMusic.play();
       }
       currentPlayer = currentPlayer === "X" ? "O" : "X";
     }
   });
 });
+
 
 function checkWin(player) {
   for (const combination of WINNING_COMBINATIONS) {
@@ -45,12 +50,12 @@ function checkWin(player) {
       return true;
     }
   }
-  return false;
 }
 const resetButton = document.querySelector(".reset");
 resetButton.addEventListener("click", function () {
   document.querySelectorAll(".box").forEach((box) => {
     box.textContent = "";
   });
+  currentPlayer = 'X';
   document.querySelector(".winner").style.display = "none";
 });
