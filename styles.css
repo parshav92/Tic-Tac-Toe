@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css2?family=Bellefair&display=swap);
-/* https://github.com/Rahi999/Tic-Tac-Toe-GamePlay/tree/master */
 *{
     margin: 0;
     padding: 0;
@@ -26,8 +25,8 @@ body{
     grid-template-rows: repeat(3, 10vw);
     grid-template-columns: repeat(3, 10vw);
     font-family: "Bellefair",serif;
-    max-width: 100%;
-    max-height: 100%;
+    /* width: 100vw; */
+    /* height: 100vh; */
     place-content: center;
     margin: 0 auto !important;
     align-items: center;
@@ -45,13 +44,19 @@ body{
     height: 10vw; 
 }
 @media (max-width: 768px) {
+    .board {
+        grid-template-rows: repeat(3, 30vw); 
+        grid-template-columns: repeat(3, 30vw); 
+    }
     .box {
-        font-size: 8vw; 
+        font-size: 15vw;
         border: 2.5px solid #f6546a;
+        width: 30vw; 
+        height: 30vw; 
     }
     .player {
-        font-size: 1vw; 
-        margin: 10px 10px;
+        font-size: 1rem;
+        margin: 10px;
     }
 }
 .info{
@@ -77,10 +82,10 @@ body{
 }
 .player{
     margin: 30px ;
-    font-size: 1.5vw; 
+    font-size: 2rem; 
     text-align: center;
     border: 2px solid #f6546a;
-    padding: 1rem;
+    padding: 1rem ;
 }
 .winner{
     
@@ -97,14 +102,14 @@ body{
     animation: fadeIn 0.5s ease-out;
 }
 .winnertext{
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
     margin: 0 20px;
     color: #fff;
     font-family: "Bellefair",serif;
 }
 .reset{
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 10px 20px;
     background-color: #f6546a;
     color: white;
