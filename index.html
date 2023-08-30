@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-tac-toe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+    <div class="board">
+        <div class="box bt-0 bl-0" id="box1"></div>
+        <div class="box bt-0" id="box2"></div>
+        <div class="box bt-0 br-0" id="box3"></div>
+        <div class="box bl-0" id="box4"></div>
+        <div class="box" id="box5"></div>
+        <div class="box br-0" id="box6"></div>
+        <div class="box bl-0 bb-0" id="box7"></div>
+        <div class="box bb-0" id="box8"></div>
+        <div class="box bb-0 br-0" id="box9"></div>
+    </div>
+    <div class="info">
+        <div class="player" id="player1">Player 1 : X</div>
+        <div class="player" id="player2">Player 2 : 0</div>
+    </div>
+    </div>
+    <div class="winner">
+        <div class="winnertext">Player 1 wins!</div>
+        <button class="reset">Reset Board</button>
+    </div>
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="background-music.mp3" type="audio/mpeg">
+    </audio>
+    <script src="script.js"></script>
+</body>
+</html>
